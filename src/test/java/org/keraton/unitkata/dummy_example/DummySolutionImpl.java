@@ -8,6 +8,6 @@ package org.keraton.unitkata.dummy_example;
 public class DummySolutionImpl {
 
     public boolean isTrue() {
-        return false;
+        return true;
     }
 }

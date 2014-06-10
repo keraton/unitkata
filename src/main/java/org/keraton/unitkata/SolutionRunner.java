@@ -103,4 +103,5 @@ public class SolutionRunner extends BlockJUnit4ClassRunner {
 
         return methods;
     }
+
 }
