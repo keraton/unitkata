@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a27d353a-344e-4595-a35b-ac07a9e3aee1" name="Default" comment="" />
+    <list default="true" id="a27d353a-344e-4595-a35b-ac07a9e3aee1" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="UnitKata.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -116,10 +120,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SolutionRunner.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="SolutionRunner.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/keraton/unitkata/SolutionRunner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="0" selection-start="1653" selection-end="1653" vertical-scroll-proportion="-0.7181818" vertical-offset="1130" max-vertical-offset="1680">
+            <state line="49" column="0" selection-start="1653" selection-end="1653" vertical-scroll-proportion="0.0" vertical-offset="1130" max-vertical-offset="1680">
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1860#2034#0" expanded="true" />
@@ -127,6 +131,15 @@
                 <element signature="e#2872#3423#0" expanded="true" />
                 <element signature="e#3412#3413#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="6" selection-start="14" selection-end="14" vertical-scroll-proportion="0.027272727" vertical-offset="0" max-vertical-offset="550">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -159,20 +172,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state line="95" column="20" selection-start="4178" selection-end="4190" vertical-scroll-proportion="0.0" vertical-offset="2280" max-vertical-offset="3555">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ParentRunner.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.10/junit-4.10-sources.jar!/org/junit/runners/ParentRunner.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="257" column="4" selection-start="8901" selection-end="8901" vertical-scroll-proportion="-6.0" vertical-offset="3159" max-vertical-offset="5130">
-              <folding>
-                <element signature="e#8148#8242#0" expanded="true" />
-                <element signature="e#8237#8238#0" expanded="true" />
-                <element signature="e#8373#8476#0" expanded="true" />
-                <element signature="e#8470#8471#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -213,6 +212,9 @@
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
@@ -243,6 +245,7 @@
         <option value="$PROJECT_DIR$/src/main/java/org/keraton/unitkata/SolutionRunner.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/keraton/unitkata/UnitKataRunner.java" />
         <option value="$PROJECT_DIR$/src/test/java/org/keraton/unitkata/dummy_example/UnitKataRunnerTest.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -679,7 +682,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="21" y="59" width="1266" height="928" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -698,7 +701,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27450982" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27450982" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39952153" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28110048" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -727,13 +730,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.10/junit-4.10.jar!/org/junit/runners/BlockJUnit4ClassRunner.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="160" selection-end="160" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1455">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.10/junit-4.10-sources.jar!/org/junit/Rule.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="44" column="18" selection-start="1651" selection-end="1651" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="735">
@@ -1125,7 +1121,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/keraton/unitkata/SolutionRunner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="0" selection-start="1653" selection-end="1653" vertical-scroll-proportion="-0.7181818" vertical-offset="1130" max-vertical-offset="1680">
+        <state line="49" column="0" selection-start="1653" selection-end="1653" vertical-scroll-proportion="0.0" vertical-offset="1130" max-vertical-offset="1680">
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1860#2034#0" expanded="true" />
@@ -1133,6 +1129,13 @@
             <element signature="e#2872#3423#0" expanded="true" />
             <element signature="e#3412#3413#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="6" selection-start="14" selection-end="14" vertical-scroll-proportion="0.027272727" vertical-offset="0" max-vertical-offset="550">
+          <folding />
         </state>
       </provider>
     </entry>
