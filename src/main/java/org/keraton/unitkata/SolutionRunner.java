@@ -1,7 +1,6 @@
 package org.keraton.unitkata;
 
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.internal.runners.statements.ExpectException;
 import org.junit.runner.Description;
 import org.junit.runner.notification.Failure;
 import org.junit.runner.notification.RunListener;
@@ -9,9 +8,9 @@ import org.junit.runner.notification.RunNotifier;
 import org.junit.runners.BlockJUnit4ClassRunner;
 import org.junit.runners.model.FrameworkMethod;
 import org.junit.runners.model.InitializationError;
-import org.keraton.unitkata.annotation.Hint;
-import org.keraton.unitkata.annotation.Order;
+import org.junit.runners.model.Statement;
 import org.keraton.unitkata.annotation.Solution;
+import org.keraton.unitkata.annotation.Solve;
 
 import java.lang.reflect.Field;
 import java.util.Collections;
@@ -77,8 +76,8 @@ public class SolutionRunner extends BlockJUnit4ClassRunner {
     @Override
     protected Description describeChild(FrameworkMethod method) {
         String methodName = testName(method);
-        Hint hint = method.getAnnotation(Hint.class);
-        if (hint != null) methodName = String.format("Hint : %s", hint.value());
+        String hint = method.getAnnotation(Solve.class).hint();
+        if (hint != null) methodName = String.format("Hint : %s", hint);
 
         return Description.createTestDescription(getTestClass().getJavaClass(),
                 methodName, method.getAnnotations());
@@ -86,22 +85,39 @@ public class SolutionRunner extends BlockJUnit4ClassRunner {
 
     @Override
     protected List<FrameworkMethod> computeTestMethods() {
-        List<FrameworkMethod> methods = super.computeTestMethods();
+        List<FrameworkMethod> methods = getTestClass().getAnnotatedMethods(Solve.class);
 
         // Sort failure in order
         Collections.sort(methods, new Comparator<FrameworkMethod>() {
             @Override
             public int compare(FrameworkMethod o1, FrameworkMethod o2) {
-                Order order1 = o1.getMethod().getAnnotation(Order.class);
-                Order order2 = o2.getMethod().getAnnotation(Order.class);
-                if (order1 == null && order2 == null) return 0;
-                if (order1 == null && order2 != null) return -1;
-                if (order1 != null && order2 == null) return 1;
-                return order1.value() - order2.value();
+                int order1 = o1.getMethod().getAnnotation(Solve.class).order();
+                int order2 = o2.getMethod().getAnnotation(Solve.class).order();
+                return order1 - order2;
             }
         });
 
         return methods;
+    }
+
+    @Deprecated
+    @Override
+    protected Statement possiblyExpectingExceptions(FrameworkMethod method,
+                                                    Object test, Statement next) {
+        Solve annotation= method.getAnnotation(Solve.class);
+        return expectsException(annotation) ? new ExpectException(next,
+                getExpectedException(annotation)) : next;
+    }
+
+    private Class<? extends Throwable> getExpectedException(Solve annotation) {
+        if (annotation == null || annotation.expected() == Solve.None.class)
+            return null;
+        else
+            return annotation.expected();
+    }
+
+    private boolean expectsException(Solve annotation) {
+        return getExpectedException(annotation) != null;
     }
 
 }

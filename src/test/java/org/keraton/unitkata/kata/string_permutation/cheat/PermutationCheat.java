@@ -10,7 +10,7 @@ import java.util.Map;
  */
 public class PermutationCheat {
 
-    boolean isPermutation(String string, String permutation) {
+    public boolean isPermutation(String string, String permutation) {
         if (string.length() != permutation.length())
             return false;
         if (string.equals(permutation))
