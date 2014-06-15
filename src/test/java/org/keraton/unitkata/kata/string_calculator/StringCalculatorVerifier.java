@@ -64,4 +64,25 @@ public class StringCalculatorVerifier {
             Assert.assertEquals("negatives not allowed:-1,-2",e.getMessage());
         }
     }
+
+    @Solve(order = 10, hint = "Numbers bigger than 1000 should be ignored, so adding add(2,1001)  = 2")
+    public void verifier_10() {
+        Assert.assertEquals(Integer.valueOf(2), stringCalculator.add("2,1001"));
+    }
+
+    @Solve(order = 11, hint = "Delimiters can be of any length with the following format:  “//[delimiter]\\n” for example: “//[***]\\n1***2***3” should return 6")
+    public void verifier_11() {
+        Assert.assertEquals(Integer.valueOf(6), stringCalculator.add("//[***]\n1***2***3"));
+    }
+
+    @Solve(order = 12, hint = "Allow multiple delimiters like this:  “//[delim1][delim2]\\n” for example “//[*][%]\\n1*2%3” should return 6.")
+    public void verifier_12() {
+        Assert.assertEquals(Integer.valueOf(6), stringCalculator.add("//[*][%]\n1*2%3"));
+    }
+
+    @Solve(order = 13, hint = "Make sure you can also handle multiple delimiters with length longer than one char")
+    public void verifier_13() {
+        Assert.assertEquals(Integer.valueOf(6), stringCalculator.add("//[**][%%]\n1**2%%3"));
+    }
+
 }

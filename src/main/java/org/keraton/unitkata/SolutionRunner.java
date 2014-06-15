@@ -76,8 +76,8 @@ public class SolutionRunner extends BlockJUnit4ClassRunner {
     @Override
     protected Description describeChild(FrameworkMethod method) {
         String methodName = testName(method);
-        String hint = method.getAnnotation(Solve.class).hint();
-        if (hint != null) methodName = String.format("Hint : %s", hint);
+        Solve solve = method.getAnnotation(Solve.class);
+        methodName = String.format("(%d) : %s", solve.order(), solve.hint());
 
         return Description.createTestDescription(getTestClass().getJavaClass(),
                 methodName, method.getAnnotations());

@@ -1,6 +1,5 @@
 package org.keraton.unitkata.kata.string_calculator;
 
-import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.keraton.unitkata.UnitKataRunner;
 import org.keraton.unitkata.annotation.Solution;
@@ -15,5 +14,4 @@ public class StringCalculatorTest {
     @Solution
     private StringCalculator stringCalculator;
 
-    @Test public void init(){}
 }
