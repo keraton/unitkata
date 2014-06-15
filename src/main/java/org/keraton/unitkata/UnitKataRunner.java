@@ -6,14 +6,14 @@ import org.junit.Test;
 import org.junit.internal.AssumptionViolatedException;
 import org.junit.internal.runners.model.EachTestNotifier;
 import org.junit.runner.Description;
-import org.junit.runner.JUnitCore;
 import org.junit.runner.Runner;
 import org.junit.runner.notification.Failure;
 import org.junit.runner.notification.RunNotifier;
 import org.junit.runners.BlockJUnit4ClassRunner;
-import org.junit.runners.model.FrameworkMethod;
 import org.junit.runners.model.InitializationError;
-import org.keraton.unitkata.annotation.*;
+import org.keraton.unitkata.annotation.Solution;
+import org.keraton.unitkata.annotation.Summary;
+import org.keraton.unitkata.annotation.Verifier;
 import org.keraton.unitkata.exception.NoSolutionException;
 import org.keraton.unitkata.exception.NoVerifierException;
 
@@ -98,10 +98,17 @@ public class UnitKataRunner extends BlockJUnit4ClassRunner {
     }
 
     private void throwNoTestViolation(RunNotifier notifier, Object objectTest) {
-        Summary summary = objectTest.getClass().getAnnotation(Summary.class);
-        if (summary != null)
+        final Summary summary = objectTest.getClass().getAnnotation(Summary.class);
+        if (summary != null) {
+            AssumptionViolatedException assumptionViolatedException = new AssumptionViolatedException(summary.value()) {
+
+                public void describeTo(org.hamcrest.Description description) {
+                     description.appendText(summary.value());
+                }
+                                                                      };
             notifier.fireTestAssumptionFailed(new Failure(Description.createSuiteDescription(objectTest.getClass()),
-                    new AssumptionViolatedException(summary.value())));
+                    assumptionViolatedException));
+        }
     }
 
     private boolean hasTest(Object objectTest) {
