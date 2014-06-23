@@ -22,9 +22,6 @@ import java.lang.reflect.Method;
 import java.util.List;
 
 
-/**
- * Created by bowiesanggajayabrotosumpeno on 05/06/2014.
- */
 public class UnitKataRunner extends BlockJUnit4ClassRunner {
 
     private Object objectTest;
@@ -103,7 +100,7 @@ public class UnitKataRunner extends BlockJUnit4ClassRunner {
             AssumptionViolatedException assumptionViolatedException = new AssumptionViolatedException(summary.value()) {
 
                 public void describeTo(org.hamcrest.Description description) {
-                     description.appendText(summary.value());
+                     description.appendText("\n \n========================= UNIT KATA ==============================\n" + summary.value());
                 }
                                                                       };
             notifier.fireTestAssumptionFailed(new Failure(Description.createSuiteDescription(objectTest.getClass()),

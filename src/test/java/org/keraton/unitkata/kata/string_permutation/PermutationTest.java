@@ -12,7 +12,7 @@ import org.keraton.unitkata.annotation.Verifier;
 @RunWith(UnitKataRunner.class)
 @Verifier(PermutationVerifier.class)
 @Summary(   "You need to implement the isPermutation(String string, String permutation) \n"
-            +  "    which return true two string is permutation of one another"
+            + "which return true two string is permutation of one another"
         )
 public class PermutationTest {
 
