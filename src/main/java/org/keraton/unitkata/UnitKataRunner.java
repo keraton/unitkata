@@ -90,7 +90,8 @@ public class UnitKataRunner extends BlockJUnit4ClassRunner {
             throw new NoVerifierException("No verifier for " + objectTest.getClass());
 
         Class clazz = verifier.value();
-        Runner runner = new SolutionRunner(clazz, solution);
+        boolean showHint = verifier.showHint();
+        Runner runner = new SolutionRunner(clazz, solution, showHint);
         runner.run(notifier);
     }
 

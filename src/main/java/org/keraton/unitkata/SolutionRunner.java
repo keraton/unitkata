@@ -24,6 +24,7 @@ public class SolutionRunner extends BlockJUnit4ClassRunner {
 
     private Object solutionVerifier;
     private boolean isAlreadyKO = false;
+    private final boolean showHint;
 
     /**
      * Creates a BlockJUnit4ClassRunner to run {@code klass}
@@ -31,10 +32,11 @@ public class SolutionRunner extends BlockJUnit4ClassRunner {
      * @param klass
      * @throws org.junit.runners.model.InitializationError if the test class is malformed.
      */
-    public SolutionRunner(Class<?> klass, Object solution) throws InitializationError {
+    public SolutionRunner(Class<?> klass, Object solution, boolean showHint) throws InitializationError {
         super(klass);
         try {
             solutionVerifier = super.createTest();
+            this.showHint = showHint;
 
             Field[] fields = solutionVerifier.getClass().getDeclaredFields();
             for(Field field: fields) {
@@ -75,9 +77,10 @@ public class SolutionRunner extends BlockJUnit4ClassRunner {
 
     @Override
     protected Description describeChild(FrameworkMethod method) {
-        String methodName = testName(method);
         Solve solve = method.getAnnotation(Solve.class);
-        methodName = String.format("(%d) : %s", solve.order(), solve.hint());
+        String methodName = showHint
+                                ? String.format("(%d) : %s", solve.order(), solve.hint())
+                                : String.format("(%d) : No hint allowed", solve.order());
 
         return Description.createTestDescription(getTestClass().getJavaClass(),
                 methodName, method.getAnnotations());

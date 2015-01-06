@@ -57,7 +57,7 @@ public class StringCalculatorVerifier {
     }
 
     @Solve(order = 9, hint = "Calling Add with a negative number will throw an exception “negatives not allowed” - " +
-                             "and the negative that was passed, ex add(-1,2,-2) -> -1,-2 ")
+                             "and the negative that was passed, ex add(-1,2,-2) -> negatives not allowed:-1,-2 ")
     public void verifier_9() {
         try {
             stringCalculator.add("-1,2,-2");

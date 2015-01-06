@@ -8,4 +8,6 @@ import java.lang.annotation.*;
 public @interface Verifier {
 
     Class<?> value();
+
+    boolean showHint() default true;
 }
